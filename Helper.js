@@ -10,9 +10,6 @@ class Helper {
     }
 
     compute(curr, prev, op){
-        // if(curr.endsWith("!")){
-        //     curr = this.computeFactorial(curr);
-        // }
         let currFloat = parseFloat(curr);
         let prevFloat = parseFloat(prev);
         let output;

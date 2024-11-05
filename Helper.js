@@ -1,4 +1,4 @@
-class Helper {
+class DOMHelper {
     constructor(){
         this.currOp = document.querySelector(".currOp");
         this.prevOp = document.querySelector(".prevOp");
@@ -7,6 +7,40 @@ class Helper {
     update(curr, prev="", op=""){
         this.currOp.textContent = curr;
         this.prevOp.textContent = `${prev}${op}`;
+    }
+
+    animateWrongInput(){
+        document.querySelector(".output").animate(
+            [
+              {border: `2px solid red`},
+              {transform: 'translate(1px, 1px)', border: `2px solid red`},
+              {transform: 'translate(-2px, -2px)', border: `1px solid red`},
+              {transform: 'translate(2px, 2px)'},
+              {transform: 'translate(-2px, 3px)'},
+              {transform: 'translate(2px, -3px)'},
+              
+            ],
+            {
+              duration: 400,
+              iterations: 1,
+            },
+          );
+    }
+}
+
+
+class Helper {
+    
+    constructor(){
+        this.DOMHelper = new DOMHelper();
+    }
+
+    update(curr, prev="", op=""){
+        this.DOMHelper.update(curr, prev, op);
+    }
+
+    animateWrongInput(){
+        this.DOMHelper.animateWrongInput();
     }
 
     compute(curr, prev, op){
@@ -58,23 +92,6 @@ class Helper {
         return output.toString();
     }
 
-    animateWrongInput(){
-        document.querySelector(".output").animate(
-            [
-              {border: `2px solid red`},
-              {transform: 'translate(1px, 1px)', border: `2px solid red`},
-              {transform: 'translate(-2px, -2px)', border: `1px solid red`},
-              {transform: 'translate(2px, 2px)'},
-              {transform: 'translate(-2px, 3px)'},
-              {transform: 'translate(2px, -3px)'},
-              
-            ],
-            {
-              duration: 400,
-              iterations: 1,
-            },
-          );
-    }
 }
 
 export default Helper;

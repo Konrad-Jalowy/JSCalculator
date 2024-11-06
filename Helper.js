@@ -10,7 +10,6 @@ class DOMHelper {
     }
 
     formatNumber(numberAsString){
-        console.log(numberAsString);
         if(numberAsString === "") return "";
         if(numberAsString.endsWith(".")){
             return `${parseFloat(numberAsString).toLocaleString()}.`;

@@ -4,9 +4,20 @@ class DOMHelper {
         this.prevOp = document.querySelector(".prevOp");
     }
 
-    update(curr, prev="", op=""){
-        this.currOp.textContent = curr;
-        this.prevOp.textContent = `${prev}${op}`;
+    update(curr="", prev="", op=""){
+        this.currOp.textContent = this.formatNumber(curr);
+        this.prevOp.textContent = `${this.formatNumber(prev)}${op}`;
+    }
+
+    formatNumber(numberAsString){
+        console.log(numberAsString);
+        if(numberAsString === "") return "";
+        if(numberAsString.endsWith(".")){
+            return `${parseFloat(numberAsString).toLocaleString()}.`;
+        }
+        if(!numberAsString.includes(".")) return parseFloat(numberAsString).toLocaleString();
+        let [integerPart, decimalPart] = numberAsString.split(".");
+        return `${parseFloat(integerPart).toLocaleString()}.${decimalPart}`;
     }
 
     animateWrongInput(){
@@ -65,7 +76,7 @@ class Helper {
                 output = prevFloat * currFloat;
                 break;
         }
-        return output;
+        return output.toString();
     }
 
     factorial(number){

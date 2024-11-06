@@ -3,7 +3,9 @@
     margin: 0;
     padding: 0;
 }
-
+:root {
+    --number-bg-color: rgba(216, 180, 254, .75);
+  }
 body {
     display: flex;
     min-height: 100vh;
@@ -13,6 +15,7 @@ body {
 }
 
 .output {
+    
     background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
     color: white;
     text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
@@ -23,7 +26,16 @@ body {
     align-items: flex-end;
     justify-content: space-between;
     padding: 1rem;
+    border: 1px solid black;
 }
+
+.full-columns{
+    grid-column: 1 / -1;
+}
+
+.two-columns {
+    grid-column: span 2;
+  }
 
 .currOp {
     font-size: 2.5rem;
@@ -35,6 +47,147 @@ body {
 }
 
 button[data-operation]{
-    width: 50px;
-    height: 50px;
+    font-size: 2rem;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+    /* border: 1px solid black; */
+}
+
+
+.calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(140px, auto) repeat(6, 100px);
+  }
+
+.number-button{
+    /* background-color: var(--number-bg-color); */
+    background-color: rgb(45 212 191);
+    /* outline: none; */
+    
+    font-weight: bold;
+}
+
+.operation-button {
+    background-color: rgb(147 197 253);
+}
+
+.operation-button:hover {
+    background-color: rgb(191 219 254);
+}
+
+.number-button:hover{
+    /* background-color: rgba(216, 180, 254, .9); */
+    background-color: rgb(94 234 212);
+}
+
+.clear-button {
+    background-color: #BC3F4A
+}
+
+.clear-button:hover{
+    background-color: #FA8072;
+}
+.btn {
+    
+    position: relative; 
+    padding: 0.3rem 0.7rem;
+    background-color: #252525;
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #fff;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0, 0.2);
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    /* border: 2px solid rgb(31 41 55); */
+    border: 2px solid inherit;
+    
+}
+
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0046a5;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-secondary {
+    /* background-color: #158ffb;
+    border-color: #158ffb; */
+    background: #085078;  /* fallback for old browsers */
+    background: linear-gradient(40deg, #00d2ff 5%, #3a7bd5  100%, #00d2ff  88%);
+    color: rgb(226 232 240);
+    text-shadow: 1px 2px 4px rgba(226, 232, 240, .6);
+    border: 1px solid #165ec2;
+
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #1266c9;
+    border-color: #1266c9;
+}
+
+.btn-success {
+    /* background-color: #14c7a4;
+    border-color: #14c7a4;  */
+    
+    background: linear-gradient(42deg, #4AC29A 16%, #BDFFF3  100%, #4AC29A  50%);
+    border: 1px solid #369e7b;
+
+}
+.btn-success:hover,
+.btn-success:focus {
+    /* background-color: #12b295;
+    border-color: #12b295; */
+    background-position: right center;
+}
+
+.btn-warning {
+    /* background-color: #fdc800;
+    border-color: #fdc800;  */
+    background: #ffb75e; 
+    /* background: -webkit-linear-gradient(to right, #ffb75e, #ed8f03); 
+    background: linear-gradient(to right, #ffb75e, #ed8f03); 
+    background: linear-gradient(15deg, #ffb75e, #ed8f03); */
+    background: linear-gradient(15deg, #ffb75e 27%, #ed8f03 80%);
+    border: 1px solid #ae8c26;
+}
+.btn-warning:hover,
+.btn-warning:focus {
+    /* background-color: #ffca2c;
+    border-color: #ffc720; */
+}
+
+.btn-error {
+    /* background-color: #dc3545;
+    border-color: #dc3545;  */
+    background: #e53935;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #e35d5b, #e53935);  
+/* background: linear-gradient(to right, #e35d5b, #e53935);  */
+background: linear-gradient(15deg, #e35d5b 36%, #e53935 80%); 
+border: 1px solid #e53935;
+color: rgb(231, 229, 228);
+text-shadow: 1px 2px 4px rgba(231, 229, 228, .6);
+
+}
+.btn-error:hover,
+.btn-error:focus {
+    /* background-color: #bb2d3b;
+    border-color: #b02a37; */
 }

@@ -1,4 +1,9 @@
 //OLD CODE
+//That was the idea, my first class that i wrote
+//Then it got me thinking "whats next?"
+//And i started input controller/abstract input controller 
+//And somehow i never used this class
+//But i included it anyways...
 
 
 // class OutputController {

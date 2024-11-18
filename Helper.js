@@ -19,6 +19,7 @@ class DOMHelper {
         return `${parseFloat(integerPart).toLocaleString()}.${decimalPart}`;
     }
 
+
     animateWrongInput(){
         document.querySelector(".output").animate(
             [

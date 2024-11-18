@@ -17,4 +17,6 @@ Features:
 - floating point numbers
 - overwrite flag (after using equals, delete or insert digit replaces whole number)
 - can compute using operators instead of = sign
-- if youre too busy to find out why its great and i spent 2 days doing it (while doing other stuff) - GET OUT, i cant explain it in this short presentation xD
+EDIT FROM FUTURE: I added some things (ripple effects, new features) but i forgot to update. So heres update.
+BTW i also included my old file when i wanted to write OutputController class (its commented out).
+
